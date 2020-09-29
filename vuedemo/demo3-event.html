@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="test">
+    <button v-on:click="sayHi()">来啊，点我啊</button>
+</div>
+<!--导入相关js-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#test",//选择器
+        data: {
+            msg: "11"
+        },//数据
+        methods: {
+            sayHi: function () {
+                alert(this.msg)
+            }
+        }//方法必须在指定对象中
+    });
+</script>
+</body>
+</html>

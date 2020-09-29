@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="test">
+    <!--if-->
+    <H1 v-if="ok">YYYYY</H1> <!--就是标签绑定-->
+    <H1 v-else>n</H1> <!--就是标签绑定-->
+    <!--这里的测试网页控制台控制变量-->
+    <H1 v-if="test==='1'">1</H1>
+    <H1 v-else-if="test==='2'">2</H1>
+    <H1 v-else>鬼知道</H1>
+    <!--for-->
+    <li v-for="item in list">
+        {{item.msg}}
+    </li>
+    <!--带下标-->
+    <li v-for="(item,index) in list" style="color: aquamarine">
+        {{item.msg}} --{{index}}
+    </li>
+</div>
+<!--导入相关js-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#test",//选择器
+        data: {
+            ok: true,
+            test: "1",
+            list: [
+                {msg: "1111"}, {msg: "222"}, {msg: "333"}
+            ]
+        }//数据
+    });
+</script>
+</body>
+</html>

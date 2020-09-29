@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="test">
+    <label>文本框嗨起来(实时监听_vue</label>
+    <input type="text" v-model="msg">{{msg}}<br/>
+
+    <!--单选-->
+    <input type="radio" name="sex" value="女" v-model="change">女
+    <input type="radio" name="sex" value="男" v-model="change">男
+    <span>选中了：{{change}}</span><br/>
+
+    <!--下拉-->
+    <select v-model="select">
+        <option value="">请选择</option>
+        <option value="a">a</option>
+        <option value="b">b</option>
+        <option value="c">c</option>
+        <option value="d">d</option>
+    </select>
+    <span>选中了：{{select}}</span><br/>
+</div>
+<!--导入相关js-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#test",//选择器
+        data: {
+            msg: "",
+            change: "",
+            select: "a",
+            checkbox: ""
+        },//数据
+    });
+</script>
+
+</body>
+</html>

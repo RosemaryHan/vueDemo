@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
 </head>
 <body>
 <div id="test">
-{{message}}
+    <H1 v-bind:title="h1">我给你讲我悬停显示了你信不信</H1> <!--就是标签绑定-->
+    {{message}}
 </div>
 <!--导入相关js-->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
     var vm = new Vue({
-        el:"#test",//选择器
-        data:{
-            message:"hello,vue"
+        el: "#test",//选择器
+        data: {
+            message: "hello,vue",
+            h1: "titel"
         }//数据
     });
-    vm.message="hello world"
+    vm.message = "hello world"
 </script>
-
 </body>
 </html>
