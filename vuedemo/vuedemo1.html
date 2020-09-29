@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="test">
+{{message}}
+</div>
+<!--导入相关js-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#test",
+        data:{
+            message:"hello,vue"
+        }
+    });
+    vm.message="hello world"
+</script>
+
+</body>
+</html>
