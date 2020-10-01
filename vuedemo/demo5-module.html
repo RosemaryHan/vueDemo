@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--逻辑是这样的：首先这个标签遍历了data里面的数值。那么这个数组里的值又怎么传给组件操作呢？-->
+<!--当然是在组件中绑定遍历出来的值，然后再用props来绑定组件的关联事件。
+<li>{{first1}}</li>这里面的值就是被循环以后出来的值
+类似于v-bind对应props ; v-bind引号里的值对应循环出来的值 ； template里面的值是接收了循环里的值-->
+<div id="test">
+    <!--    给组件传递值:props-->
+    <aa v-for="first in items" v-bind:first1="first"></aa>
+</div>
+
+<!--导入相关js-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    //定义一个组件
+    Vue.component('aa', {
+        props: ['first1'],
+        template: '<li>{{first1}}</li>'
+    });
+    var vm = new Vue({
+        el: "#test",//选择器
+        data: {
+            items: ["11", "22", "33"]
+        }
+    });
+</script>
+
+</body>
+</html>
